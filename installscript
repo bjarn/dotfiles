@@ -70,7 +70,7 @@ echo 'Install pkg-config...'
 brew install pkg-config
 
 echo 'Install wget...'
-brew install wget --overwrite
+brew install wget
 
 echo 'Install httpie...'
 brew install httpie
