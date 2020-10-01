@@ -1,0 +1,20 @@
+# This is Git's per-user configuration file.
+[user]
+        name = FULL NAME
+        email = EMAIL
+        signingkey = SIGNING KEY HASH
+[core]
+        excludesfile = global git ignore, should already be there
+[commit]
+        gpgsign = true
+        template = /User/YOU/stCommitMsg
+[gitflow "feature.finish"]
+        push = true
+[gitflow "bugfix.finish"]
+        push = true
+[gitflow "hotfix.finish"]
+        push = true
+[gitflow "release.finish"]
+        push = true
+[url "git@github.com:"]
+        insteadOf = https://github.com/

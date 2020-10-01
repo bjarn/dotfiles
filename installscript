@@ -1,0 +1,216 @@
+#!/usr/bin/env bash
+
+# Hide "last login" line when starting a new terminal session
+touch $HOME/.hushlogin
+
+# Install zsh
+echo 'Install oh-my-zsh'
+echo '-----------------'
+rm -rf $HOME/.oh-my-zsh
+curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+# Add global gitignore
+ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
+git config --global core.excludesfile $HOME/.global-gitignore
+
+#########################################################
+### Setup Symlinks
+#########################################################
+# Symlink zsh prefs
+rm $HOME/.zshrc
+ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
+
+# Symlink vim prefs
+rm $HOME/.vimrc
+ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
+rm $HOME/.vim
+ln -s $HOME/.dotfiles/shell/.vim $HOME/.vim
+
+# Symlink yarn prefs
+rm $HOME/.yarnrc
+ln -s $HOME/.dotfiles/shell/.yarnrc $HOME/.yarnrc
+
+#########################################################
+### Setup composer, brew and mas-cli
+#########################################################
+echo 'Install composer'
+echo '----------------'
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+mv composer.phar /usr/local/bin/composer
+
+echo 'Install homebrew...'
+echo install homebrew
+sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo 'Install mas'
+brew install mas
+
+#########################################################
+### Install common dev/shell tools
+#########################################################
+echo 'Install Github CLI...'
+brew install gh
+
+echo 'Install Git Flow...'
+brew install git-flow-avh
+
+echo 'Install z...'
+brew install z
+
+echo 'Install pkg-config...'
+brew install pkg-config
+
+echo 'Install wget...'
+brew install wget --overwrite
+
+echo 'Install httpie...'
+brew install httpie
+
+echo 'Install ncdu...'
+brew install ncdu
+
+echo 'Install hub...'
+brew install hub
+
+echo 'Install ack...'
+brew install ack
+
+echo 'Install doctl...'
+brew install doctl
+
+echo 'Install zsh-autosuggestions...'
+brew install zsh-autosuggestions
+
+echo 'Install webp...'
+brew install webp
+
+echo 'Install docker...'
+brew cask install docker
+brew install docker-compose
+
+#########################################################
+### Install PHP
+#########################################################
+echo 'Add henkrehorst/php tap...'
+brew tap henkrehorst/php
+
+echo 'Install PHP 7.2...'
+brew install valet-php@7.2
+brew link valet-php@7.2 --force
+
+echo 'Install imagemagick...'
+brew install imagemagick
+
+echo 'Install imagick...'
+pecl install imagick
+
+echo 'Install Prestissimo for Composer...'
+composer global require hirak/prestissimo
+
+echo 'Install phpunit-watcher...'
+composer global require spatie/phpunit-watcher
+
+echo 'Install mixed-content-scanner-cli...'
+composer global require spatie/mixed-content-scanner-cli
+
+#########################################################
+### Install NodeJS
+#########################################################
+echo 'Install node...'
+brew install node
+
+echo 'Install yarn...'
+brew install yarn
+
+echo 'Install fnm...'
+brew install Schniz/tap/fnm
+eval "$(fnm env --multi)"
+fnm install 10
+fnm install 12
+fnm install 14
+fnm default 12
+
+echo 'Install gulp-cli...'
+npm install gulp-cli -g
+
+#########################################################
+### Install GUI tools and software
+#########################################################
+echo 'Install Google Chrome...'
+brew cask install google-chrome
+
+echo 'Install Postman...'
+brew cask install postman
+
+echo 'Install iterm2...'
+brew cask install iterm2
+
+echo 'Install Jetbrains Toolbox...'
+brew cask install jetbrains-toolbox
+
+echo 'Install Slack...'
+brew cask install slack
+
+echo 'Install 1Password...'
+brew cask install 1password
+
+echo 'Install Responsively...'
+brew cask install responsively
+
+echo 'Install Spotify...'
+brew cask install spotify
+
+echo 'Install numi...'
+brew cask install numi
+
+echo 'Install Google Drive Filestream...'
+brew cask install google-drive-file-stream
+
+echo 'Install Vanilla...'
+brew cask install vanilla
+
+echo 'Install Toggl Track...'
+brew cask install toggl-track
+
+echo 'Install Sky Fonts...'
+brew cask install skyfonts
+
+echo 'Install Dropbox...'
+brew cask install dropbox
+
+echo 'Install Magnet...'
+mas install 441258766
+
+echo 'Install The Unarchiver...'
+mas install 425424353
+
+echo 'Install Xcode...'
+mas install 497799835
+
+###################################################################
+### Install Valet+ (as last, since its installation fails, a lot)
+###################################################################
+echo 'Install Valet+...'
+composer global require weprovide/valet-plus
+valet fix
+valet install
+
+echo '++++++++++++++++++++++++++++++'
+echo '++++++++++++++++++++++++++++++'
+echo 'All done!'
+echo 'Things to do to make the powerlevel10k terminal theme work:'
+echo '1. Install fonts included in ~/.dotfiles/misc'
+echo '2. Install theme included in ~/.dotfiles/misc'
+
+echo '++++++++++++++++++++++++++++++'
+echo 'Some optional tidbits'
+
+echo "1. Set some sensible MacOS defaults by running: $HOME/.dotfiles/macos/set-defaults.sh"
+echo "2. Make a .dotfiles-custom/shell/.aliases for your personal commands"
+
+echo '++++++++++++++++++++++++++++++'
+echo '++++++++++++++++++++++++++++++'

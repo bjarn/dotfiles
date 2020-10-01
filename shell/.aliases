@@ -1,0 +1,95 @@
+# PHP
+alias phpunit="vendor/bin/phpunit"
+alias phpunitw="phpunit-watcher watch"
+alias a="php artisan"
+alias c="composer"
+alias cu="composer update"
+alias cr="composer require"
+alias ci="composer install"
+alias cda="composer dump-autoload -o"
+alias cmd="composer remove $1"
+alias cmun="COMPOSER_MEMORY_LIMIT=-1 composer update nothing"
+alias hostfile="sudo vi /etc/hosts"
+alias deploy='envoy run deploy'
+alias deploy-code='envoy run deploy-code'
+alias mfs='php artisan migrate:fresh --seed'
+alias nah='git reset --hard;git clean -df'
+alias p="phpunit"
+alias pf="phpunit --filter "
+alias d="php artisan dusk"
+alias df="php artisan dusk --filter"
+alias sshconfig="vi ~/.ssh/config"
+alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
+alias ngrok="~/.composer/vendor/weprovide/valet-plus/bin/ngrok"
+alias vshare="valet share -subdomain=realify -region=eu"
+
+# JavaScript
+alias jest="./node_modules/.bin/jest"
+
+# Git
+alias gmf="git merge $1 --no-ff --no-commit"
+alias gcm="git commit -m $1"
+alias gph="git push"
+alias gch="git checkout $1"
+alias gcn="git commit --no-edit"
+alias gpl="git pull"
+alias gfh="git fetch"
+alias gta="git tag $1"
+alias gtp="git push --tags"
+alias gpo="git push origin"
+alias gm="git merge"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Fast open
+alias o="open ."
+
+# List all files colorized in long format
+alias l="ls -laF"
+
+# Redis
+alias redisflush="redis-cli FLUSHALL"
+
+# VSCode
+alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# IP addresses
+alias ip="curl https://diagnostic.opendns.com/myip ; echo"
+alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Flush Directory Service cache
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Lock the screen
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Switch NPM
+alias npmnpm="npm config set registry https://registry.npmjs.org"
+
+# Switch Yarn
+alias yarnnpm="yarn config set registry https://registry.npmjs.org"
+
+# Restart touch bar
+alias touchbar="killall ControlStrip"
+
+# Magento
+alias m2="magerun2"
+alias m1="magerun"
+alias ccw="~/.composer/vendor/mage2tv/magento-cache-clean/bin/cache-clean.js -w"
+alias mcs="cd vendor/snowdog/frontools; yarn install; gulp styles; cd ../../../"
+
+# Misc
+alias bssh="bull ssh $1"
+alias ..="cd ../"
+alias ....="cd ../../"
+
