@@ -4,7 +4,8 @@ phpv() {
     else
         valet use php@$1
     fi
-    sed -in "s/128M/512M/g" /usr/local/etc/php/$1/conf.d/php-memory-limits.ini
+    sed -in "s/2G/8G/g" /usr/local/etc/valet-php/$1/conf.d/z-performance.ini
+    sed -in "s/128M/512M/g" /usr/local/etc/valet-php/$1/conf.d/z-performance.ini
     composer global update
     source ~/.zshrc
 }
@@ -14,7 +15,6 @@ alias php71="phpv 7.1"
 alias php72="phpv 7.2"
 alias php73="phpv 7.3"
 alias php74="phpv 7.4"
-
 
 # Create a new directory and enter it
 function mkd() {
