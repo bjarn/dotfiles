@@ -20,6 +20,10 @@ git config --global core.excludesfile $HOME/.global-gitignore
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 
+# Symlink powerlevel10k prefs
+rm $HOME/.p10k.zsh
+ln -s $HOME/.dotfiles/shell/.p10k.zsh $HOME/.p10k.zsh
+
 # Symlink vim prefs
 rm $HOME/.vimrc
 ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
