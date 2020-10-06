@@ -179,6 +179,9 @@ defaults write com.apple.dock tilesize -int 40
 # Hide indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool false
 
+# Disable resizing of Dock
+defaults write com.apple.dock size-immutable -bool true
+
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
