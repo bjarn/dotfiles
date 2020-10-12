@@ -199,6 +199,12 @@ brew cask install visual-studio-code
 echo 'Install Cleanshot X'
 brew cask install cleanshot
 
+echo 'Install Tripmode'
+brew cask install tripmode
+
+echo 'Install Gifox'
+brew cask install gifox
+
 echo 'Install Magnet...'
 mas install 441258766
 
