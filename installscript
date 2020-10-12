@@ -57,6 +57,9 @@ brew install mas
 #########################################################
 ### Install common dev/shell tools
 #########################################################
+echo "Installing ZSH syntax highlighting"
+brew install zsh-syntax-hightlighting
+
 echo 'Install Github CLI...'
 brew install gh
 
