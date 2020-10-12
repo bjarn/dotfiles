@@ -196,8 +196,8 @@ brew cask install telegram
 echo 'Install Visual Studio Code'
 brew cask install visual-studio-code
 
-echo 'Install Skitch'
-brew cask install skitch
+echo 'Install Cleanshot X'
+brew cask install cleanshot
 
 echo 'Install Magnet...'
 mas install 441258766
