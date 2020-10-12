@@ -113,12 +113,6 @@ pecl install imagick
 echo 'Install Prestissimo for Composer...'
 composer global require hirak/prestissimo
 
-echo 'Install phpunit-watcher...'
-composer global require spatie/phpunit-watcher
-
-echo 'Install mixed-content-scanner-cli...'
-composer global require spatie/mixed-content-scanner-cli
-
 #########################################################
 ### Install NodeJS
 #########################################################
