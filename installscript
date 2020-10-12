@@ -208,6 +208,9 @@ mas install 441258766
 echo 'Install The Unarchiver...'
 mas install 425424353
 
+echo 'Install Jira Cloud for Mac..."
+mas install 1475897096
+
 echo 'Install Xcode...'
 mas install 497799835
 
