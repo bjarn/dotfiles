@@ -179,6 +179,12 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Prevent applications from bouncing in Dock
 defaults write com.apple.dock no-bouncing -bool true
 
+# Auto hide Dock
+defaults write com.apple.dock autohide -boolean true
+
+# Set Dock hide/show delay at zero so we do not have to wait
+defaults write com.apple.dock autohide-delay -float 0
+
 # Set the icon size of Dock items to 40 pixels
 defaults write com.apple.dock tilesize -int 40
 
