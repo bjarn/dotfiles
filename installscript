@@ -166,9 +166,6 @@ brew cask install spotify
 echo 'Install numi...'
 brew cask install numi
 
-echo 'Install Google Drive Filestream...'
-brew cask install google-drive-file-stream
-
 echo 'Install Vanilla...'
 brew cask install vanilla
 
@@ -210,6 +207,18 @@ mas install 425424353
 
 echo 'Install Jira Cloud for Mac..."
 mas install 1475897096
+
+echo "Install Microsoft 365 apps..."
+echo "Install Word..."
+mas install 462054704
+echo "Install Excel..."
+mas install 462058435
+echo "Install PowerPoint..."
+mas install 462062816
+echo "Install Outlook..."
+mas install 985367838
+echo "Install Onedrive..."
+mas install 823766827
 
 echo 'Install Xcode...'
 mas install 497799835
