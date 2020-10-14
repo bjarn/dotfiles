@@ -56,6 +56,10 @@ alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
+# Show/hide dock
+alias showdock="defaults write com.apple.dock autohide -bool false && killall Dock"
+alias hidedock="defaults write com.apple.dock autohide -bool true && killall Dock"
+
 # IP addresses
 alias ip="curl https://diagnostic.opendns.com/myip ; echo"
 alias localip="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
