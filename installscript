@@ -147,7 +147,7 @@ echo 'Install Go Doc'
 go get golang.org/x/tools/cmd/godoc
 
 echo 'Install Go Lint'
-go get github.com/golang/lint/golint
+go get golang.org/x/lint/golint
 
 #########################################################
 ### Install GUI tools and software
