@@ -136,6 +136,19 @@ fnm default 12
 echo 'Install gulp-cli...'
 npm install gulp-cli -g
 
+########################################################
+### Install Go
+########################################################
+
+echo 'Install Go'
+brew install go
+
+echo 'Install Go Doc'
+go get golang.org/x/tools/cmd/godoc
+
+echo 'Install Go Lint'
+go get github.com/golang/lint/golint
+
 #########################################################
 ### Install GUI tools and software
 #########################################################
