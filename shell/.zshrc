@@ -43,9 +43,6 @@ for file in ~/.dotfiles-custom/shell/.{exports,aliases,functions,zshrc}; do
 done
 unset file
 
-# FNM
-eval "$(fnm env --multi)"
-
 # Sudoless npm https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
@@ -69,3 +66,8 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# FNM
+eval "$(fnm env --multi)"
