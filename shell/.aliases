@@ -86,12 +86,6 @@ alias yarnnpm="yarn config set registry https://registry.npmjs.org"
 # Restart touch bar
 alias touchbar="killall ControlStrip"
 
-# Magento
-alias m2="magerun2"
-alias m1="magerun"
-alias ccw="~/.composer/vendor/mage2tv/magento-cache-clean/bin/cache-clean.js -w"
-alias mcs="cd vendor/snowdog/frontools; yarn install; gulp styles; cd ../../../"
-
 # Misc
 alias ..="cd ../"
 alias ....="cd ../../"
