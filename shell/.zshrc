@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
@@ -31,6 +31,16 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git zsh-autosuggestions jira jsontools composer npm pip z ansible redis-cli)
 
 source $ZSH/oh-my-zsh.sh
+
+setopt EXTENDEDGLOB
+for dump in $HOME/.zcompdump(#qN.m1); do
+    compinit
+    if [[ -s "$dump" && (! -s "$dump.zwc" || "$dump" -nt "$dump.zwc") ]]; then
+        zcompile "$dump"
+    fi
+done
+unsetopt EXTENDEDGLOB
+compinit -C
 
 # Load the shell dotfiles, and then some:
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -65,9 +75,8 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"
-
+export PATH="$HOME/Library/Android/sdk/platform-tools/:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# FNM
-eval "$(fnm env --multi)"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"

@@ -94,18 +94,15 @@ echo 'Install webp...'
 brew install webp
 
 echo 'Install docker...'
-brew cask install docker
+brew install --cask docker
 brew install docker-compose
 
 #########################################################
 ### Install PHP
 #########################################################
-echo 'Add henkrehorst/php tap...'
-brew tap henkrehorst/php
-
-echo 'Install PHP 7.2...'
-brew install valet-php@7.2
-brew link valet-php@7.2 --force
+echo 'Install PHP 7.4...'
+brew install php@7.4
+brew link php@7.4 --force
 
 echo 'Install imagemagick...'
 brew install imagemagick
@@ -113,25 +110,18 @@ brew install imagemagick
 echo 'Install imagick...'
 pecl install imagick
 
-echo 'Install Prestissimo for Composer...'
-composer global require hirak/prestissimo
-
 #########################################################
 ### Install NodeJS
 #########################################################
 echo 'Install node...'
 brew install node
 
+npm install -g n
+
+n lts
+
 echo 'Install yarn...'
 brew install yarn
-
-echo 'Install fnm...'
-brew install Schniz/tap/fnm
-eval "$(fnm env --multi)"
-fnm install 10
-fnm install 12
-fnm install 14
-fnm default 12
 
 echo 'Install gulp-cli...'
 npm install gulp-cli -g
@@ -153,64 +143,64 @@ go get golang.org/x/lint/golint
 ### Install GUI tools and software
 #########################################################
 echo 'Install Google Chrome...'
-brew cask install google-chrome
+brew install --cask google-chrome
 
 echo 'Install Postman...'
-brew cask install postman
+brew install --cask postman
 
 echo 'Install iterm2...'
-brew cask install iterm2
+brew install --cask iterm2
 
 echo 'Install Jetbrains Toolbox...'
-brew cask install jetbrains-toolbox
+brew install --cask jetbrains-toolbox
 
 echo 'Install Slack...'
-brew cask install slack
+brew install --cask slack
 
 echo 'Install 1Password...'
-brew cask install 1password
+brew install --cask 1password
 
 echo 'Install Responsively...'
-brew cask install responsively
+brew install --cask responsively
 
 echo 'Install Spotify...'
-brew cask install spotify
+brew install --cask spotify
 
 echo 'Install numi...'
-brew cask install numi
+brew install --cask numi
 
-echo 'Install Vanilla...'
-brew cask install vanilla
+echo 'Install Bartender...'
+brew install --cask bartender
 
 echo 'Install Toggl Track...'
-brew cask install toggl-track
+brew install --cask toggl-track
 
 echo 'Install Sky Fonts...'
-brew cask install skyfonts
+brew install --cask skyfonts
 
 echo 'Install Dropbox...'
-brew cask install dropbox
+brew install --cask dropbox
 
 echo 'Install Figma'
-brew cask install figma
+brew install --cask figma
 
 echo 'Install TablePlus'
-brew cask install tableplus
+brew install --cask tableplus
 
 echo 'Install Telegram'
-brew cask install telegram
+brew install --cask telegram
 
 echo 'Install Visual Studio Code'
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 
 echo 'Install Cleanshot X'
-brew cask install cleanshot
+brew install --cask cleanshot
 
 echo 'Install Tripmode'
-brew cask install tripmode
+brew install --cask tripmode
 
-echo 'Install Gifox'
-brew cask install gifox
+echo 'Install WhatsApp Desktop'
+mas install 1147396723
 
 echo 'Install Magnet...'
 mas install 441258766
@@ -220,6 +210,21 @@ mas install 425424353
 
 echo 'Install Jira Cloud for Mac..."
 mas install 1475897096
+
+echo 'Install Teamviewer..."
+brew install --cask teamviewer
+
+echo 'Install Steam..."
+brew install --cask steam
+
+echo 'Install HEY..."
+brew install --cask hey
+
+echo 'Install Discord..."
+brew install --cask discord
+
+echo 'Install AdGuard'
+mas install 1440147259
 
 echo "Install Microsoft 365 apps..."
 echo "Install Word..."
@@ -237,12 +242,10 @@ echo 'Install Xcode...'
 mas install 497799835
 
 ###################################################################
-### Install Valet+ (as last, since its installation fails, a lot)
+### Install Jale
 ###################################################################
-echo 'Install Valet+...'
-composer global require weprovide/valet-plus
-valet fix
-valet install
+echo 'Install Jale...'
+npm i -g jale
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
@@ -250,6 +253,7 @@ echo 'All done!'
 echo 'Things to do to make the powerlevel10k terminal theme work:'
 echo '1. Install fonts included in ~/.dotfiles/misc'
 echo '2. Install theme included in ~/.dotfiles/misc'
+echo '3. Install Jale with jale install'
 
 echo '++++++++++++++++++++++++++++++'
 echo 'Some optional tidbits'

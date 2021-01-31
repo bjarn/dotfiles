@@ -21,7 +21,7 @@ alias df="php artisan dusk --filter"
 alias sshconfig="vi ~/.ssh/config"
 alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
 alias ngrok="~/.composer/vendor/weprovide/valet-plus/bin/ngrok"
-alias vshare="valet share -subdomain=realify -region=eu"
+alias vshare="~/.composer/vendor/weprovide/valet-plus/bin/ngrok http -hostname realify.eu.ngrok.io -region eu 80"
 
 # JavaScript
 alias jest="./node_modules/.bin/jest"
