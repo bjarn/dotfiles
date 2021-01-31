@@ -208,19 +208,19 @@ mas install 441258766
 echo 'Install The Unarchiver...'
 mas install 425424353
 
-echo 'Install Jira Cloud for Mac..."
+echo 'Install Jira Cloud for Mac...'
 mas install 1475897096
 
-echo 'Install Teamviewer..."
+echo 'Install Teamviewer...'
 brew install --cask teamviewer
 
-echo 'Install Steam..."
+echo 'Install Steam...'
 brew install --cask steam
 
-echo 'Install HEY..."
+echo 'Install HEY...'
 brew install --cask hey
 
-echo 'Install Discord..."
+echo 'Install Discord...'
 brew install --cask discord
 
 echo 'Install AdGuard'
