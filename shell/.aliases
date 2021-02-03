@@ -19,7 +19,7 @@ alias pf="phpunit --filter "
 alias d="php artisan dusk"
 alias df="php artisan dusk --filter"
 alias sshconfig="vi ~/.ssh/config"
-alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
+alias copykey='command cat ~/.ssh/id_rsa.pub | pbcopy'
 
 # JavaScript
 alias jest="./node_modules/.bin/jest"
@@ -27,7 +27,7 @@ alias jest="./node_modules/.bin/jest"
 # Git
 alias gmf="git merge $1 --no-ff --no-commit"
 alias gcm="git commit -m $1"
-alias gph="git push"
+alias gph="git push -u"
 alias gch="git checkout $1"
 alias gcn="git commit --no-edit"
 alias gpl="git pull"
@@ -87,4 +87,4 @@ alias touchbar="killall ControlStrip"
 # Misc
 alias ..="cd ../"
 alias ....="cd ../../"
-
+alias devc="cd ~/dev/code"

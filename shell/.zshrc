@@ -70,11 +70,11 @@ ssh-add -A 2>/dev/null;
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/elasticsearch@6/bin:$PATH"
+export PATH="/usr/local/opt/elasticsearch@7/bin:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools/:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
